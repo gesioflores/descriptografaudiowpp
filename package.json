@@ -1,0 +1,14 @@
+{
+  "name": "decrypt-service",
+  "version": "1.0.0",
+  "description": "Serviço de descriptografia de áudios do WhatsApp",
+  "main": "descriptografar.js",
+  "scripts": {
+    "start": "node descriptografar.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.2.1",
+    "whatsapp-web.js": "^1.19.5"
+  }
+}
