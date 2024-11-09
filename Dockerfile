@@ -1,20 +1,20 @@
-# Usar uma imagem base do Node.js (versão LTS recomendada)
+# Use uma imagem do Node.js como base
 FROM node:16
 
-# Crie um diretório de trabalho na imagem
+# Cria um diretório de trabalho na imagem
 WORKDIR /app
 
-# Copie os arquivos package.json para o diretório de trabalho
+# Copia os arquivos de dependências
 COPY package.json ./
 
-# Instale as dependências do projeto
+# Instala as dependências
 RUN npm install
 
-# Copie o resto dos arquivos da aplicação para o diretório de trabalho
+# Copia o resto dos arquivos da aplicação para o diretório de trabalho
 COPY . .
 
-# Expõe a porta 4001 para o serviço de descriptografia
+# Expõe a porta (embora o WebJs não use diretamente)
 EXPOSE 4001
 
-# Comando para iniciar o servidor
-CMD ["npm", "start"]
+# Comando para iniciar o script
+CMD ["node", "decryptMediaTest.js"]
